@@ -1,2 +1,2 @@
 # webpack
-[webpack管理输出](https://webpack.docschina.org/guides/output-management/)
+[webpack代码分离](https://webpack.docschina.org/guides/code-splitting/)
