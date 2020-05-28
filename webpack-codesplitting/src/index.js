@@ -1,6 +1,8 @@
-// import _ from 'lodash';
+// 防止重复导入的代码
 
-/* function component() {
+/* import _ from 'lodash';
+
+function component() {
     var element = document.createElement('div');
     var btn = document.createElement('buttton');
 
@@ -15,6 +17,7 @@
 
 document.body.appendChild(component()); */
 
+// 动态导入的代码
 function getComponent() {
   return import(/* webpackChunkName: "lodash" */ 'lodash').then(({ default: _ }) => {
     var element = document.createElement('div');
@@ -26,3 +29,17 @@ function getComponent() {
 getComponent().then(component => {
   document.body.appendChild(component);
 })
+
+// 动态导入的代码优化
+
+// async function getComponent() {
+//   var element = document.createElement('div');
+//   const { default: _ } = await import(/* webpackChunkName: "lodash" */ 'lodash');
+  
+//   element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+//   return element;
+// }
+
+// getComponent().then(component => {
+//   document.body.appendChild(component);
+// });
